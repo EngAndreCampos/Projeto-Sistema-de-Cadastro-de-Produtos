@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+// Classe Produto
+class Produto {
+    private String nome;
+    private double preco;
+    private String categoria;
+
+    // Construtor
+    public Produto(String nome, double preco, String categoria) {
+        this.nome = nome;
+        this.preco = preco;
+        this.categoria = categoria;
+    }
+
+    // Método para exibir o produto no formato desejado
+    public void exibirProduto() {
+        System.out.printf("Produto: %s | Categoria: %s | Preco: R$ %.2f\n",
+                nome, categoria, preco);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Lendo os dados do produto
+        String nome = scanner.next();
+        double preco = scanner.nextDouble();
+        String categoria = scanner.next();
+
+        // Cria o objeto Produto
+        Produto produto = new Produto(nome, preco, categoria);
+
+        // Exibe as informações no formato solicitado
+        produto.exibirProduto();
+
+        scanner.close();
+    }
+}
